@@ -5,6 +5,10 @@ This log is structured differently from the base `CHANGELOG.md`.
 * There is no **TO BE RELEASED** section
 * Entries should be headed with just a date; no version numbers
 
+## 08/15/2018
+
+* make sure nginx's `body_temp_path` gets created prior to 1st nginx start
+
 ## 08/10/2018
 
 * activemq & nginx service fixes:
