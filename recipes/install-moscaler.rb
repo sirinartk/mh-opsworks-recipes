@@ -4,7 +4,7 @@
 ::Chef::Recipe.send(:include, MhOpsworksRecipes::RecipeHelpers)
 include_recipe "mh-opsworks-recipes::update-package-repo"
 
-install_package('python-pip run-one git python-dev libffi-dev')
+install_package('python-pip python-virtualenv run-one git python-dev libffi-dev libssl-dev')
 
 moscaler_attributes = get_moscaler_info
 Chef::Log.info moscaler_attributes
@@ -37,9 +37,21 @@ git "get the moscaler software" do
   user 'moscaler'
 end
 
-bash 'install dependencies' do
-  code 'cd /home/moscaler/mo-scaler && pip install -r requirements.txt'
-  user 'root'
+bash 'create virtualenv' do
+  code %Q|
+cd /home/moscaler/mo-scaler &&
+/usr/bin/virtualenv venv
+  |
+  not_if { ::Dir.exist?("/home/moscaler/mo-scaler/venv") }
+end
+
+bash 'upgrade pip and install dependencies' do
+  code %Q|
+cd /home/moscaler/mo-scaler &&
+venv/bin/pip install -U pip &&
+venv/bin/pip install -r requirements.txt &&
+chown -R moscaler venv
+  |
 end
 
 execute "Clean out existing cron jobs" do
