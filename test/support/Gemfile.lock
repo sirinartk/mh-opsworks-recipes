@@ -21,23 +21,30 @@ GEM
       yajl-ruby (~> 1.1)
     gherkin (2.12.2)
       multi_json (~> 1.3)
-    mini_portile2 (2.0.0)
-    multi_json (1.11.2)
-    nokogiri (1.6.7.2)
-      mini_portile2 (~> 2.0.0.rc2)
+    mini_portile2 (2.8.1)
+    multi_json (1.15.0)
+    nokogiri (1.14.2)
+      mini_portile2 (~> 2.8.0)
+      racc (~> 1.4)
     polyglot (0.3.5)
-    rake (11.1.2)
+    racc (1.6.2)
+    rake (13.0.6)
     redcarpet (2.1.1)
-    rufus-lru (1.0.5)
-    treetop (1.6.5)
+    rufus-lru (1.1.0)
+    treetop (1.6.12)
       polyglot (~> 0.3)
-    yajl-ruby (1.3.1)
-    yard (0.8.7.6)
+    webrick (1.7.0)
+    yajl-ruby (1.4.3)
+    yard (0.9.28)
+      webrick (~> 1.7.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  foodcritic (~> 6.0.0)
-  yajl-ruby (~> 1.3.1)
+  foodcritic (~> 6.0.1)
+  yajl-ruby (~> 1.4.2)
   yard-chef!
+
+BUNDLED WITH
+   2.1.4
