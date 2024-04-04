@@ -10,34 +10,44 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
+    cucumber-core (13.0.2)
+      cucumber-gherkin (>= 27, < 28)
+      cucumber-messages (>= 20, < 23)
+      cucumber-tag-expressions (> 5, < 7)
+    cucumber-gherkin (27.0.0)
+      cucumber-messages (>= 19.1.4, < 23)
+    cucumber-messages (22.0.0)
+    cucumber-tag-expressions (6.1.0)
     erubis (2.7.0)
-    foodcritic (6.0.1)
+    foodcritic (6.1.1)
+      cucumber-core (>= 1.3)
       erubis
-      gherkin (~> 2.11)
       nokogiri (>= 1.5, < 2.0)
       rake
       rufus-lru (~> 1.0)
       treetop (~> 1.4)
       yajl-ruby (~> 1.1)
-    gherkin (2.12.2)
-      multi_json (~> 1.3)
-    mini_portile2 (2.0.0)
-    multi_json (1.11.2)
-    nokogiri (1.6.7.2)
-      mini_portile2 (~> 2.0.0.rc2)
+    mini_portile2 (2.8.5)
+    nokogiri (1.15.6)
+      mini_portile2 (~> 2.8.2)
+      racc (~> 1.4)
     polyglot (0.3.5)
-    rake (11.1.2)
+    racc (1.7.3)
+    rake (13.2.0)
     redcarpet (2.1.1)
-    rufus-lru (1.0.5)
-    treetop (1.6.5)
+    rufus-lru (1.1.0)
+    treetop (1.6.12)
       polyglot (~> 0.3)
     yajl-ruby (1.3.1)
-    yard (0.8.7.6)
+    yard (0.9.36)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  foodcritic (~> 6.0.0)
+  foodcritic (~> 6.1.0)
   yajl-ruby (~> 1.3.1)
   yard-chef!
+
+BUNDLED WITH
+   2.1.4
